@@ -1,0 +1,28 @@
+from typing import Union
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
+
+from app.wiki_utils import wiki_search
+
+
+app = FastAPI()
+
+
+@app.get("/", response_class=HTMLResponse)
+def read_root():
+    return """
+    <html>
+        <head>
+            <title>WikipediaSearcher</title>
+        </head>
+        <body>
+            <h1>WikipediaSearcher</h1>
+        </body>
+    </html>
+    """
+
+
+@app.get("/term/{wiki_term}")
+def read_item(wiki_term: str, k: int = 1):
+
+    return wiki_search(wiki_term, k)

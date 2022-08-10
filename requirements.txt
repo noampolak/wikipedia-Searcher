@@ -1,1 +1,4 @@
-wikipedia=1.4.0
+wikipedia==1.4.0
+fastapi==0.79.0
+typing-extensions==4.3.0
+uvicorn[standard]==0.18.2
