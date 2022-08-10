@@ -22,6 +22,6 @@ def read_root():
 
 
 @app.get("/api/search_term/{wiki_term}")
-def read_item(wiki_term: str, k: int = 1):
+async def search_item(wiki_term: str, k: int = 1):
 
     return wiki_search(wiki_term, k)
