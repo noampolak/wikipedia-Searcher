@@ -26,5 +26,5 @@ class TestWikiSearch:
         resp = client.get(f"{BASE_SEARCH_URL}search_term/{term}?k={k}")
         json_res = resp.json()
         assert len(json_res) == 3
-        # because there are times when the suggested terms doesn't include the excat name this check will disabled
+        # because there are times when the suggested terms doesn't include the exact name this check will disabled
         # assert term in resp.json()[0]["title"].lower()
