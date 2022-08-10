@@ -13,7 +13,7 @@
 `docker run -p 8000:80 wikipedia_searcher:latest` &
 
 ### Usage
-Open localhost:8000/docs to open the swagger and use the ** Search Item ** endpoint. \
+Open localhost:8000/docs to open the swagger and use the **Search Item** endpoint. \
 wiki_term = The term you want to search. \
 k = Number of possible results.
 
