@@ -2,14 +2,14 @@ import wikipedia
 
 
 def wiki_search(term: str, k: int):
+    terms_to_return_pages = []
     try:
-        term_data = wikipedia.page(term)
-        return {"title": term_data.title, "summary": term_data.summary}
+        terms_to_return_pages.append(wikipedia.page(term, auto_suggest=False))
+        return terms_to_return_pages
     except wikipedia.exceptions.PageError as e:
         return []
     except wikipedia.exceptions.DisambiguationError as e:
         terms_to_return = wikipedia.search(term)
-        terms_to_return_pages = []
 
         for term_to_return in terms_to_return:
             try:

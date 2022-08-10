@@ -1,4 +1,3 @@
-from typing import Union
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
@@ -22,7 +21,7 @@ def read_root():
     """
 
 
-@app.get("/term/{wiki_term}")
+@app.get("/api/search_term/{wiki_term}")
 def read_item(wiki_term: str, k: int = 1):
 
     return wiki_search(wiki_term, k)
