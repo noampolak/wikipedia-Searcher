@@ -10,7 +10,7 @@
 
 ### Run On docker
 `docker build . --load -t wikipedia_searcher:latest` \
-`docker run -p 8000:80 wikipedia_searcher:latest` &
+`docker run -p 8000:80 wikipedia_searcher:latest &`
 
 ### Usage
 Open localhost:8000/docs to open the swagger and use the **Search Item** endpoint. \
