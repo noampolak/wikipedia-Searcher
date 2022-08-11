@@ -20,6 +20,14 @@ class TestWikiSearch:
         assert len(json_res) == 1
         assert json_res[0]["title"] == "Tabby cat"
 
+    def test_get_valid_term_one_result_sending_k_greater_than_one(self):
+        term = "Tabby cat"
+        k = 3
+        resp = client.get(f"{BASE_SEARCH_URL}search_term/{term}?k={k}")
+        json_res = resp.json()
+        assert len(json_res) == 1
+        assert json_res[0]["title"] == "Tabby cat"
+
     def test_get_valid_term_many_results(self):
         term = "python"
         k = 3
