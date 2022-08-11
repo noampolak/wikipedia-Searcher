@@ -2,7 +2,8 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
 from app.wiki_utils import wiki_search
-
+import logging
+import logging.config
 
 app = FastAPI()
 
